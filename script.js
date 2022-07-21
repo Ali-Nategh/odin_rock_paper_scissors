@@ -9,10 +9,11 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerChoice, computerChoice){
-    playerChoice = playerChoice.toLowerCase()
+function playRound(){
+    playerChoice = prompt("rock, paper or scissors?").toLowerCase()
+    let computerChoice = getComputerChoice();
     if (playerChoice == computerChoice){
-        return "It's a tie! You both chose the same"
+        return `It's a tie! You both chose ${playerChoice}`
     } else if (playerChoice == "rock" && computerChoice == "scissors"){
         return "You won! Rock beats Scissors"
     } else if (computerChoice == "rock" && playerChoice == "scissors"){
@@ -26,10 +27,14 @@ function playRound(playerChoice, computerChoice){
     } else if (computerChoice == "scissors" && playerChoice == "paper"){
         return "You lost! Scissors beats Paper"
     } else {
-        return "error!"
+        return `error! please enter a valid input: -> ${playRound()}`
     }
 }
 
-let playerSelection = "rock";
-let computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function game(){
+    for (let i = 0; i < 5; i++){
+        console.log(playRound());
+    }
+}
+
+game()

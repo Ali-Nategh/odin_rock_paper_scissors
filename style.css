@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+}
+
+#show_result{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid rgba(60, 55, 125, 0.475) 2px;
+    background-color: rgba(46, 83, 83, 0.468);
+    border-radius: 5%;
+    width: 50%;
+    min-height: 500px;
+}
+
+#buttons{
+    flex: 1 1 auto;
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 5%;
+}
+
+#btnRock{
+    padding: 5% 10%;
+}
+#btnPaper{
+    padding: 5% 10%;
+}
+#btnScissors{
+    padding: 5% 10%;
+}

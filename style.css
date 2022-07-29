@@ -10,9 +10,7 @@ body{
 
 #showResult{
     flex: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 5%;
     border: solid rgba(60, 55, 125, 0.475) 2px;
     background-color: rgba(46, 83, 83, 0.468);
     border-radius: 5%;

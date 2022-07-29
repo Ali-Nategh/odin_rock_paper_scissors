@@ -38,15 +38,21 @@ function game(){
 const btn_rock = document.querySelector('#btnRock');
 const btn_paper = document.querySelector('#btnPaper');
 const btn_scissors = document.querySelector('#btnScissors');
+const results = document.querySelector('#results')
+
+var roundCounter = 1
 
 btn_rock.addEventListener('click', () => {
-    console.log(playRound("rock"));
+    results.innerHTML += `Round ${roundCounter}: ${playRound("rock")} <br>`;
+    roundCounter ++
 });
 btn_paper.addEventListener('click', () => {
-    console.log(playRound("paper"));
+    results.innerHTML += `Round ${roundCounter}: ${playRound("paper")} <br>`;
+    roundCounter ++
 });
 btn_scissors.addEventListener('click', () => {
-    console.log(playRound("scissors"));
+    results.innerHTML += `Round ${roundCounter}: ${playRound("scissors")} <br>`;
+    roundCounter ++
 });
 
 // game()

@@ -1,40 +1,104 @@
+@font-face { font-family: HUMANOID; src: url('fonts/HUMANOID.TTF'); }
+@font-face { font-family: ROBOTINVADERS; src: url('fonts/ROBOTINVADERS.TTF'); }
+@font-face { font-family: SFT; src: url('fonts/SFTransRobotics.ttf'); }
+@font-face { font-family: HUMAN; src: url('fonts/HumanError.ttf'); }
+@font-face { font-family: BLOOD; src: url('fonts/SlimeAndBlood.ttf'); }
+@font-face { font-family: HUMAN2; src: url('fonts/MORETHANHUMAN.TTF'); }
+
+.human{
+    font-family: HUMAN, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.computer{
+    font-family: HUMANOID, 'Times New Roman', Times, serif;
+}
+
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 10%;
-    min-height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* max-width: 100%;
     min-width: 100%;
+    height: 100%; */
+    padding: 0%;
+    margin: 0;
+    background-color: rgba(45, 45, 82, 0.9);
+
+    background-size: cover;
+    height: 100vh;
+    background-image:url('binary_background.gif');
+    opacity: 0.95;
+}
+
+.header{
+    font-family: SFT;
+    font-size:large;
+    /* width: 100%; */
+    flex: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(88, 128, 122, 0.9);
+    color: rgb(39, 37, 31);
+
 }
 
 #showResult{
     flex: auto;
-    padding: 5%;
-    border: solid rgba(60, 55, 125, 0.475) 2px;
-    background-color: rgba(46, 83, 83, 0.468);
-    border-radius: 5%;
-    width: 50%;
-    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    font-family: HUMAN;
+    padding: 2%;
+    background-color: rgba(72, 126, 126, 0.9);
+    color: rgba(31, 31, 27, 0.882);
+    align-items: center;
+    justify-content: center;
+    /* width: 100%;
+    height: 30%; */
 }
 
 #buttons{
     flex: auto;
     display: flex;
-    gap: 5%;
+    font-size: 5%;
+    gap: 3%;
     justify-content: center;
     align-items: center;
-    min-height: 50%;
-    min-width: 50%;
+    background-color: rgba(66, 91, 100, 0.9);
+    color: rgba(66, 63, 47, 0.882);
+    /* width: 100%; */
     padding: 2% 5%;
 }
 
-#btnRock{
-    padding: 5% 10%;
+#scores{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    gap: 10%;
 }
-#btnPaper{
-    padding: 5% 10%;
+
+
+button{
+    font-family: SFT;
+    padding: 1% 6%;
+    font-size: xx-large;
+    border: 1px solid;
+    box-shadow: 5px 10px;
+    color: rgba(31, 31, 31, 0.908);
 }
-#btnScissors{
-    padding: 5% 10%;
+
+button:hover{
+    background-color: rgba(102, 102, 116, 0.913);
+    /* box-shadow: 20px 10px 100px 30px rgba(68, 64, 94, 0.669) inset; */
+    box-shadow: 20px 20px 20px 1px rgba(7, 6, 6, 0.942);
+    color: rgba(45, 43, 38, 0.787);
 }
+
+button:active {
+    background-color: rgba(66, 66, 75, 0.913);
+    color: rgba(0, 0, 0, 0.908);
+    box-shadow: 10px 10px 10px 1px rgba(7, 6, 6, 0.942);
+    transform: translateY(4px);
+  }

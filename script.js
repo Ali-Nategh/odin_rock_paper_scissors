@@ -14,42 +14,58 @@ var playerScore = 0
 var computerScore = 0
 const scores = document.querySelector('#scores')
 const results = document.querySelector('#results')
+const human = document.querySelector('#scores > .human')
+const computer = document.querySelector('#scores > .computer')
+const buttons = document.querySelector('#buttons')
+
+refresh = document.createElement("button")
+refresh.textContent = "Play Again?"
+refresh.setAttribute('onClick', "document.location.reload(true)")
+refresh.style = "padding: 2% 5%;"
 
 function playRound(choice){
     playerChoice = choice;
     let computerChoice = getComputerChoice();
     if (playerScore == 5){
-        results.innerHTML = "YOU WON THE GAME! CONGRATS!"
+        results.innerHTML = "<h2>🎊 YOU WON! Humans will live another day! 🎊</h2>"
+        results.style.color = "rgba(7, 7, 7, 0.882);"
+        results.style.fontFamily = "HUMAN2"
+        buttons.innerHTML = ''
+        buttons.appendChild(refresh)
         lockGame()
     } else if ( computerScore == 5){
-        results.innerHTML = "YOU LOST THE GAME! COMPUTERS WILL DESTROY THE WORLD"
+        results.innerHTML = "<h2>💀 YOU LOST! COMPUTERS WILL DESTROY THE WORLD! 💀</h2>"
+        results.style.color = "rgba(7, 7, 7, 0.882);"
+        results.style.fontFamily = "BLOOD"
+        buttons.innerHTML = ''
+        buttons.appendChild(refresh)
         lockGame()
     } else if (playerChoice == computerChoice){
-        return `It's a tie! You both chose ${playerChoice}`;
+        return `❌ It's a tie! You both chose ${playerChoice} ❌`;
     } else if (playerChoice == "rock" && computerChoice == "scissors"){
         playerScore ++
-        scores.innerHTML = `Computer: ${computerScore} <br> Human: ${playerScore}`
-        return "You won! Rock beats Scissors";
+        human.innerHTML = `😐 Human : ${playerScore}`
+        return "🎉 You won! Rock beats Scissors 😃";
     } else if (computerChoice == "rock" && playerChoice == "scissors"){
         computerScore ++
-        scores.innerHTML = `Computer: ${computerScore} <br> Human: ${playerScore}`
-        return "You lost! Rock beats Scissors";
+        computer.innerHTML = `🤖 Computer : ${computerScore}`
+        return "🖥️ You lost! Rock beats Scissors 😱";
     } else if (playerChoice == "paper" && computerChoice == "rock"){
         playerScore ++
-        scores.innerHTML = `Computer: ${computerScore} <br> Human: ${playerScore}`
-        return "You won! Paper beats Rock";
+        human.innerHTML = `😐 Human : ${playerScore}`
+        return "🎉 You won! Paper beats Rock 😃";
     } else if (computerChoice == "paper" && playerChoice == "rock"){
         computerScore ++
-        scores.innerHTML = `Computer: ${computerScore} <br> Human: ${playerScore}`
-        return "You lost! Paper beats Rock";
+        computer.innerHTML = `🤖 Computer : ${computerScore}`
+        return "🖥️ You lost! Paper beats Rock 😱";
     } else if (playerChoice == "scissors" && computerChoice == "paper"){
         playerScore ++
-        scores.innerHTML = `Computer: ${computerScore} <br> Human: ${playerScore}`
-        return "You won! Scissors beats Paper";
+        human.innerHTML = `😐 Human : ${playerScore}`
+        return "🎉 You won! Scissors beats Pape 😃";
     } else if (computerChoice == "scissors" && playerChoice == "paper"){
         computerScore ++
-        scores.innerHTML = `Computer: ${computerScore} <br> Human: ${playerScore}`
-        return "You lost! Scissors beats Paper";
+        computer.innerHTML = `🤖 Computer : ${computerScore}`
+        return "🖥️ You lost! Scissors beats Paper 😱";
     } else {
         return `error! please enter a valid input: -> ${playRound()}`;
     };
@@ -61,15 +77,15 @@ const btn_paper = document.querySelector('#btnPaper');
 const btn_scissors = document.querySelector('#btnScissors');
 
 btn_rock.addEventListener('click', () => {
-    results.innerHTML += `Round ${roundCounter}: ${playRound("rock")} <br>`;
+    results.innerHTML = `Round ${roundCounter}:<strong> ${playRound("rock")}</strong>`;
     roundCounter ++;
 });
 btn_paper.addEventListener('click', () => {
-    results.innerHTML += `Round ${roundCounter}: ${playRound("paper")} <br>`;
+    results.innerHTML = `Round ${roundCounter}:<strong> ${playRound("paper")}</strong>`;
     roundCounter ++;
 });
 btn_scissors.addEventListener('click', () => {
-    results.innerHTML += `Round ${roundCounter}: ${playRound("scissors")} <br>`;
+    results.innerHTML = `Round ${roundCounter}:<strong> ${playRound("scissors")}</strong>`;
     roundCounter ++;
 });
 

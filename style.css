@@ -32,7 +32,7 @@ body{
 
 .header{
     font-family: SFT;
-    font-size:large;
+    font-size: large;
     /* width: 100%; */
     flex: auto;
     display: flex;

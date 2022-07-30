@@ -43,23 +43,23 @@ function playRound(choice){
     let computerChoice = getComputerChoice();
     if (playerScore == 5){
         results.innerHTML = "<h2>🎊 YOU WON! Humans will live to see another day! 🎊</h2>";
-        human.innerHTML = '😃';
-        computer.innerHTML = '🖱️';
+        human.innerHTML = '';
+        computer.innerHTML = '';
         results.style.color = "rgba(7, 7, 7, 0.882);";
         results.style.fontFamily = "HUMAN2";
-        compChoice.innerHTML = '';
-        humChoice.innerHTML = '';
+        humChoice.innerHTML = '🤫';
+        compChoice.innerHTML = '🖱️';
         buttons.innerHTML = '';
         buttons.appendChild(refresh);
         lockGame();
     } else if ( computerScore == 5){
         results.innerHTML = "<h2>💀 YOU LOST! COMPUTERS WILL DESTROY THE WORLD! 💀</h2>";
-        human.innerHTML = '☠️';
-        computer.innerHTML = '🤖🦾';
+        human.innerHTML = '';
+        computer.innerHTML = '';
         results.style.color = "rgba(7, 7, 7, 0.882);";
         results.style.fontFamily = "BLOOD";
-        compChoice.innerHTML = '';
-        humChoice.innerHTML = '';
+        humChoice.innerHTML = '☠️';
+        compChoice.innerHTML = '🤖🦾';
         buttons.innerHTML = '';
         buttons.appendChild(refresh);
         lockGame();
